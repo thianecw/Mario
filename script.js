@@ -1,15 +1,14 @@
-let formulario = document.querySelector(".fale-conosco")
-console.log(formulario)
+const form = document.querySelector('.fale-conosco')
+const background = document.querySelector('.mascara-form')
 
-let mascara = document.querySelector(".mascara-form")
-
-
-function cliqueiNoBotao(){
-formulario.style.left="700px"
-mascara.style.visibility="visible"
+function showForm() {
+    form.style.left = '50%'
+    form.style.transform = 'translateX(-50%)'
+    background.style.visibility = 'visible'
 }
 
-function sumirformulario() {
-formulario.style.letf = "-320px"
-mascara.style.visibility="hidden"
+function hideForm() {
+    form.style.left = '-330px'
+    form.style.transform = 'translateX(0)'
+    background.style.visibility = 'hidden'
 }
