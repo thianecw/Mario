@@ -2,6 +2,7 @@
   :wrench: Mario Encanador  :toilet:</h1>
 <br>
 Esse foi um projeto que eu desenvolvi no evento do <a href="https://rodolfomori.com.br/devclub">DevClub</a> em novembro/23 e aprimorei com responsividade recentemente.
+Link: https://thianecw.github.io/Mario-Encanador/
 
 ## Tecnologias utilizadas
 <br>
