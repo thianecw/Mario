@@ -2,31 +2,31 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Mukta", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .mascara-form {
-  visibility: hidden;
-  transition: visibility 1s linear;
-  z-index: 3;
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(109deg,rgba(10, 12, 16, 0.99) 15%,rgba(10, 12, 16, 0.7) 50%,rgba(10, 12, 16, 0.99) 85%
-  );
+  background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 header {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
 }
 
 header a {
-  font-size: 24px;
+  font-size: 20px;
   color: white;
   cursor: pointer;
   text-decoration: none;
+  letter-spacing: 0.1rem;
 }
 
 header a:hover {
@@ -35,7 +35,7 @@ header a:hover {
 }
 
 .logo-header {
-  height: 80px;
+  height: 60px;
   margin: 20px;
 }
 
@@ -43,7 +43,8 @@ header a:hover {
   display: flex;
   height: 100vh;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  margin-top: -50px;
 }
 
 .background {
@@ -68,8 +69,7 @@ header a:hover {
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    109deg,rgba(10, 12, 16, 0.99) 15%,rgba(10, 12, 16, 0.7) 50%,rgba(10, 12, 16, 0.99) 85%);
+  background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
 }
 
 button {
@@ -79,7 +79,7 @@ button {
   text-transform: uppercase;
   border: 0;
   padding: 10px 0;
-  border-radius: 3px;
+  border-radius: 5px;
   background-color: #c51111;
   width: 200px;
   height: 50px;
@@ -88,17 +88,27 @@ button {
   margin-top: 30px;
 }
 
+button:hover {
+  opacity: 0.7;
+}
+
+button:active {
+  opacity: 0.4;
+}
+
 .logo {
   height: 200px;
 }
 
-.marioeluigi {
+.mario-img {
   height: 60%;
+  margin-left: 70px;
 }
 
 p {
   color: white;
   font-size: 20px;
+ line-height: 35px;
 }
 
 .sobre-nos {
@@ -110,13 +120,17 @@ p {
   display: flex;
   flex-direction: column;
   background: white;
-  padding: 20px;
   border-radius: 10px;
-  gap: 20px;
-  left: -330px;
-  transition: left 1s linear;
+  gap: 10px;
   z-index: 4;
-  /* transform: translateX(0); */
+  padding-top: 40px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  left: 50%;
+  transform: translateX(-50%);
+    padding: 15px;
+    padding-top: 30px;
 }
 
 input {
@@ -124,7 +138,7 @@ input {
   border-radius: 5px;
   border: 1px solid gray;
   padding-left: 10px;
-  outline-color: #18d80f;
+  outline-color: gray;
 }
 
 textarea {
@@ -133,8 +147,27 @@ textarea {
   border-radius: 5px;
   border: 1px solid gray;
   padding-left: 10px;
-  outline-color: #18d80f;
+  outline-color: gray;
   padding: 10px;
+}
+
+form img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  right: 100%;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 5;
+}
+
+.close-btn {
+   position: absolute;
+  top: 5px;  
+  right: 5px;  
+  width: 20px;
+  height: 20px;
 }
 
 .btn-whatsapp {
@@ -150,111 +183,271 @@ textarea {
 
 /*BOTÃO WHATSAPP*/
 .btn-whatsapp a {
-	color:#fff; 
-	text-decoration:none; 
-	display:block; 
+  color: #fff;
+  text-decoration: none;
 }
+
 .btn-whatsapp {
-    
-    position:fixed; 
-    right:75px; 
-    bottom:30px; 
-    transform: translate(-50%, -50%);  
-    background-color:rgb(37, 211, 102); 
-    width:60px; height:60px; 
-    text-align:center; 
-    line-height:58px; 
-    font-size:1.8em; 
-    color:#ffffff; 
-    font-weight:100; 
-    border-radius:50%; 
+  right: 75px;
+  bottom: 30px;
+  transform: translate(-50%, -50%);
+  background-color: rgb(37, 211, 102);
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 58px;
+  font-size: 1.8em;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-whatsapp:hover {
+  opacity: 0.8;
+}
+
+.btn-whatsapp:active {
+  opacity: 0.5;
 }
 
 .btn-whatsapp:before,
-.btn-whatsapp:after
-{
-	content: '';
-    display:block;
-    position: absolute;
-    border-radius:50%;
-    border:1px solid #25d366;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    top: -20px;
-    animation: animate 1.5s linear infinite;
-    opacity:0;
-    backface-visibility:hidden;    
+.btn-whatsapp:after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #25d366;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  top: -5px;
+  animation: animate 1.5s linear infinite;
+  backface-visibility: hidden;
 }
 
-.pulsaDelay:after { animation-delay: .5s; }
+.aviso {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 16px;
+  border-radius: 4px;
+  text-align: center;
+  z-index: 1000;
+  transition: top 0.5s;
+  width: 300px;
+}
+
+.aviso.mostrar {
+  top: 30px;
+}
+
+.aviso.sucesso {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.aviso.erro {
+  background-color: c51111;
+  color: white;
+}
+
+.aviso.info {
+  background-color: #2196F3;
+  color: white;
+}
+
+.pulsaDelay:after {
+  animation-delay: .5s;
+}
+
 @keyframes animate {
-   0%   { transform: scale(0.5); opacity:0; }
-   50%  { opacity:1; }
-   100% { transform: scale(1.2); opacity:0; }
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+
 }
 
-@media (max-width: 1000px) {
+/* telas menores que 1024px (tablets e smartphones em paisagem) */
+@media screen and (max-width: 1024px) {
 
-body {
+  body {
     background-image: url("https://thumbs.dreamstime.com/b/fundo-velho-do-jogo-arcade-design-cl%C3%A1ssico-com-tubula%C3%A7%C3%A3o-e-tijolo-127982869.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
-.background video {
-  display: none;
-}
-
-    header a {
-    font-size: 18px;
-    }
-
-.logo-header {
-    height: 40px;
+  .background video {
+    display: none;
   }
 
-.logo {
-  height: 100px;
-display: flex;
-margin-top: 40px;
-}
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
 
   .sobre-nos {
-    width: 400px;
-    display: inline-block;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    margin: -120px 50px 100px 30px;
-
+    margin: 40px;
   }
-  
-.mario {
-width: 180px;
-height: 290px;
-margin-bottom: 150px;
-margin-right: -15px;
+
+  .mario-img {
+    display: none;
+  }
+
+  header {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  header a {
+    font-size: 18px;
+  }
+}
+
+textarea {
+  width: 370px;
+}
+
+/* Para telas menores que 768px (smartphones em paisagem e tablets em retrato) */
+@media screen and (max-width: 768px) {
+
+  body {
+    background-image: url("https://thumbs.dreamstime.com/b/fundo-velho-do-jogo-arcade-design-cl%C3%A1ssico-com-tubula%C3%A7%C3%A3o-e-tijolo-127982869.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .background video {
+    display: none;
+  }
+
+  .mario-img {
+    display: none;
+  }
+
+  .logo {
+    height: 150px;
   }
 
   p {
-font-size: 12px;
-width: 220px;
-  }
+  font-size:20px;
+  font-weight: 200;
+   line-height: 35px;
+   color: white;
+  } 
 
-button {
-    font-size: 10px;
-    width: 120px;
-    height: 35px;
-    border-radius: 10px;
-  }
-
-  .whatsapp img {
-    position: absolute;
-    margin-bottom: 18px;
-    margin-right: 52px;
-    height: 50px;
+  .sobre-nos {
+    max-width: 90%;
   }
 
   .fale-conosco {
-    left: -335px;
+    width: 90%;
+    max-width: 400px;
   }
 
+  button {
+    width: 150px;
+    height: 30px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    font-weight: 400;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 5px;  /* Move o botão mais para cima */
+    right: 5px;  /* Move o botão mais para a direita */
+    width: 20px;  /* Reduz o tamanho do botão */
+    height: 20px;
+  }
+}
+
+/* Para telas menores que 480px (smartphones em retrato) */
+@media screen and (max-width: 480px) {
+  body {
+    background-image: url("https://thumbs.dreamstime.com/b/fundo-velho-do-jogo-arcade-design-cl%C3%A1ssico-com-tubula%C3%A7%C3%A3o-e-tijolo-127982869.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .background video {
+    display: none;
+  }
+
+  .mario-img {
+    display: none;
+  }
+
+  .logo-header {
+    height: 40px;
+  }
+
+  header a {
+    font-size: 15px;
+  }
+
+  .logo {
+    height: 120px;
+  }
+
+  .fale-conosco {
+    padding: 10px;  /* Reduz ainda mais o padding em telas menores */
+    padding-top: 25px;  /* Mantém um pequeno espaço no topo */
+  }
+
+  .close-btn {
+    top: 3px;
+    right: 3px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .fale-conosco input,
+  .fale-conosco textarea {
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+     line-height: 35px;
+     color: white;
+    } 
+
+  .mario-img {
+    width: 90%;
+  }
+
+    input,
+  textarea {
+    width: 100%;
+  }
+
+  .btn-whatsapp {
+    right: 15px;
+    bottom: 15px;
+  }
+  
 }

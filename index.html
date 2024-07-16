@@ -1,73 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap"rel="stylesheet"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="./icon/apple-touch-icon.png"/>
-    <link rel="icon" type="image/png"sizes="32x32" href="./icon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./icon/favicon-16x16.png"/>
-    <link rel="manifest" href="./icon/site.webmanifest" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Mario Encanador</title>
-  </head>
 
-  <body>
-    <div class="mascara-form" onclick="hideForm()"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="./icon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./icon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./icon/favicon-16x16.png" />
+  <link rel="manifest" href="./icon/site.webmanifest" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Mario Encanador</title>
+</head>
 
-    <header>
-      <img src="./assets/mario-header.png" class="logo-header" />
-      <a>Home</a>
-      <a onclick="showForm()">Fale Conosco</a>
-      <a> Nossos Serviços</a>
-    </header>
+<body>
+  <div class="mascara-form" onclick="hideForm()"></div>
 
-    <div class="container">
-      <div class="background">
-        <video loop autoplay muted class="conteudo-background">
-          <source src="./assets/video.mp4" />
-        </video>
-        <!-- <img src="./assets/backgroud.jpeg" class="conteudo-background"/> -->
-        <div class="mascara-video"></div>
-      </div>
+  <header>
+    <img src="./assets/mario-header.png" class="logo-header" />
+    <a>Home</a>
+    <a onclick="showForm()">Fale Conosco</a>
+    <a> Nossos Serviços</a>
+  </header>
 
-      <div class="sobre-nos">
-        <img src="./assets/logo.png" class="logo" />
-        <br>
-        <p>🔧 Encanador Mario 🔧</p>
-        <br>
-        <p> Você já se encontrou em uma situação de emergência com encanamento?
-          Vazamentos inesperados, canos entupidos ou torneiras que não param de
-          pingar? </p>
-          <br>
-          <p> Não se preocupe, porque te apresento uma solução: o encanador mais famosos do Reino dos
-          Cogumelos</p>
-        <button onclick="showForm()">Entre em Contato</button>
-      </div>
-
-      <img src="./assets/mario.png" class="mario" />
-      
-     <!--Botão whatsapp-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<a href="https://wa.link/v1yxlr" target="_blank">
-    <div class="btn-whatsapp pulsaDelay"><i class="fa fa-whatsapp"></i></div>
-</a>
-<!--Botão whatsapp-->
-      
-      <form
-        action="https://formsubmit.co/thianecw@hotmail.com"
-        method="POST"
-        class="fale-conosco"
-      >
-        <input type="text" name="name" placeholder="Seu Nome" required />
-        <input type="email" name="email" placeholder="Telefone" required />
-        <textarea type="text" placeholder="Digite seu problema"></textarea>
-        <button type="submit">Pedir Orçamento</button>
-      </form>
+  <div class="container">
+    <div class="background">
+      <video loop autoplay muted class="conteudo-background">
+        <source src="./assets/video.mp4" />
+      </video>
+      <div class="mascara-video"></div>
     </div>
-  </body>
 
-  <script src="./script.js"></script>
+    <div class="sobre-nos">
+      <img src="./assets/logo.png" class="logo" />
+      <br>
+      <p>🔧 Encanador Mario 🔧</p>
+      <br>
+      <p> Você já se encontrou em uma situação de emergência com encanamento?
+        Vazamentos inesperados, canos entupidos ou torneiras que não param de
+        pingar? </p>
+      <br>
+      <p> Não se preocupe, porque te apresento uma solução: o encanador mais famosos do Reino dos
+        Cogumelos</p>
+      <button onclick="showForm()">Entre em Contato</button>
+    </div>
+
+    <img class="mario-img" src="./assets/mario.png" class="mario" />
+
+    <!--Botão whatsapp-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <a href="https://wa.link/v1yxlr" target="_blank">
+      <div class="btn-whatsapp"><i class="fa fa-whatsapp"></i></div>
+    </a>
+
+
+    <form action="https://formsubmit.co/thianecw@hotmail.com" method="POST" class="fale-conosco" id="form">
+      <img class="close-btn" width="50" height="50" src="https://img.icons8.com/ios/50/delete-sign--v1.png"
+        alt="close-btn" onclick="closeForm()">
+      <input class="input-name" type="text" name="name" placeholder="Seu Nome" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea type="text" placeholder="Digite seu problema"></textarea>
+      <button onclick="sendForm(event)" class="send-form-btn" type="submit">Solicitar orçamento</button>
+        </form>
+        <div id="aviso" class="aviso"></div>
+
+  </div>
+  </div>
+</body>
+
+<script src="./script.js"></script>
+
 </html>
